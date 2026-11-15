@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Everything Claude Code: setup guide — by jayantechh</title>
+<link rel="stylesheet" href="jayantechh.css"></head><body>
+
+<section class="page cover">
+  <div class="kicker">Setup guide · Claude Code × GitHub</div>
+  <h1>Claude ko apni poori<br>AI dev team bana do</h1>
+  <div class="big">ECC<span class="dot">.</span></div>
+  <p class="lede"><b>Everything Claude Code</b>: ek setup, step by step. Bilkul free aur open source (MIT license). Agents, skills, hooks, rules aur memory, sab ek jagah.</p>
+  <div class="by">by @jayantechh</div>
+  <div class="tiles">
+    <div class="tile"><b>71</b><span>Agents</span></div>
+    <div class="tile light"><b>314</b><span>Skills</span></div>
+    <div class="tile"><b>1</b><span>Command setup</span></div>
+    <div class="tile"><b>MIT</b><span>Free + open source</span></div>
+    <div class="tile light"><b>4</b><span>Easy steps</span></div>
+    <div class="tile"><b>2.2.3</b><span>Package version</span></div>
+    <div class="tile"><b>18+</b><span>Node.js needed</span></div>
+    <div class="tile light"><b>2.1+</b><span>Claude Code</span></div>
+  </div>
+  <div class="foot"><span>Made for Claude Code users · November 2026 · Save it, share it.</span></div>
+</section>
+
+<section class="page">
+  <h2 class="rule">Poora idea ek page mein</h2>
+  <p><b>Everything Claude Code (ECC)</b> Claude Code ke liye 71 agents, 314 skills, hooks, rules aur memory deta hai. Ise <b>Affaan Mustafa</b> ne banaya hai, jo Anthropic hackathon ke winner hain. Ye numbers Nov 2026 tak ke hain; repo lagatar bada ho raha hai.</p>
+  <div class="callout red"><span class="label">GitHub</span><a href="https://github.com/affaan-m/ECC">github.com/affaan-m/ECC</a></div>
+  <div class="grid3" style="margin-top:4mm">
+    <div class="card"><div class="label">Step 0</div><h4>Tools check karo</h4><p>Node.js, Git aur Claude Code installed hone chahiye.</p><div class="out">→ node / git / claude --version</div></div>
+    <div class="card"><div class="label">Step 1</div><h4>Setup chalao</h4><p>Ek command, phir wizard ke kuch sawaal.</p><div class="out">→ npx ecc-universal@2.2.3 setup</div></div>
+    <div class="card"><div class="label">Step 2</div><h4>Confirm karo</h4><p>Naye session mein plugin list dekho.</p><div class="out">→ /plugin list</div></div>
+    <div class="card"><div class="label">Step 3 · optional</div><h4>Language rules</h4><p>Apne stack ke rules khud copy karo.</p><div class="out">→ ~/.claude/rules/ecc/</div></div>
+    <div class="card"><div class="label">Step 4</div><h4>Use karo</h4><p>Planner agent se feature ke steps banwao.</p><div class="out">→ /ecc:plan "…"</div></div>
+    <div class="card"><div class="label">Fix</div><h4>Repair / remove</h4><p>Kuch gadbad ho to doctor aur repair.</p><div class="out">→ doctor · repair · uninstall</div></div>
+  </div>
+  <h3>Shuru karne ke liye kya chahiye</h3>
+  <table><tr><th>Tool</th><th>Kahan se milega</th></tr>
+    <tr><td>Node.js 18 ya naya</td><td class="mono">nodejs.org</td></tr>
+    <tr><td>Git</td><td class="mono">git-scm.com</td></tr>
+    <tr><td>Claude Code 2.1 ya naya</td><td class="mono">claude.com/claude-code</td></tr>
+  </table>
+  <h3>Teen baatein jo yaad rakhni hain</h3>
+  <div class="callout"><span class="label">1 · Sirf ek install method</span>Step 1 (npx) <i>ya</i> Option B (plugin marketplace) — dono nahi. Do baar install karne se sab double ho jaata hai.</div>
+  <div class="callout"><span class="label">2 · Common + ek language</span>Rules mein shuruaat <code>common</code> aur apni ek language se karo.</div>
+  <div class="callout"><span class="label">3 · Sirf official source</span>GitHub, npm package <code>ecc-universal</code> ya <code>ecc.tools</code> — mirrors se kabhi nahi.</div>
+  <div class="foot"><span>jayantechh · ECC setup guide</span><span>2</span></div>
+</section>
+
+<section class="page">
+  <h2><span class="n">00</span>Pehle ye cheezein chahiye</h2>
+  <p class="goal"><b>Goal:</b> confirm karo ki teeno tools aapke system par hain. Terminal kholo (Mac par Terminal, Windows par PowerShell) aur chalao:</p>
+  <pre>node --version
+git --version
+claude --version</pre>
+  <div class="callout"><span class="label">Tip</span>Agar kisi ka jawab <b>"command not found"</b> aaye, to pehle wo tool install kar lo, phir aage badho.</div>
+
+  <h2 style="margin-top:9mm"><span class="n">01</span>Setup chalao (sirf ek command)</h2>
+  <span class="meta">≈ 2 min · wizard</span>
+  <p class="goal" style="clear:both"><b>Goal:</b> ECC ko ek hi command se install karna.</p>
+  <pre>npx ecc-universal@2.2.3 setup</pre>
+  <p>Wizard kuch sawaal poochega. Personal use ke liye ye chuno:</p>
+  <table><tr><th>Sawaal</th><th>Kya chunna hai</th></tr>
+    <tr><td>Scope</td><td><b>Global user</b> — har project mein kaam karega</td></tr>
+    <tr><td>Hooks</td><td><b>Standard</b> hooks</td></tr>
+    <tr><td>Last step</td><td>Confirm kar do</td></tr>
+  </table>
+
+  <h2 style="margin-top:9mm"><span class="n">02</span>Check karo ki install ho gaya</h2>
+  <p class="goal"><b>Goal:</b> Claude Code ka naya session kholo (<code>claude</code>) aur likho:</p>
+  <pre>/plugin list</pre>
+  <div class="callout red"><span class="label">Result</span>List mein <b>ecc@ecc</b> enabled dikhna chahiye.</div>
+  <div class="foot"><span>jayantechh · ECC setup guide</span><span>3</span></div>
+</section>
+
+<section class="page">
+  <h2><span class="n">B</span>Option B: Claude Code ke andar se install</h2>
+  <p class="goal">Ise Step 1 ki <b>jagah</b> use karo, uske saath nahi:</p>
+  <pre>/plugin marketplace add https://github.com/affaan-m/ECC
+/plugin install ecc@ecc</pre>
+  <div class="callout red"><span class="label">Dhyaan do</span>Sirf ek hi tareeka chuno. Do baar install karne se skills, commands aur hooks duplicate ho jaate hain.</div>
+
+  <h2 style="margin-top:9mm"><span class="n">03</span>Apni language ke rules jodo</h2>
+  <span class="meta">optional</span>
+  <p class="goal" style="clear:both"><b>Goal:</b> plugins ke saath rules nahi aate, isliye jo chahiye unhe khud copy karo:</p>
+  <pre>git clone https://github.com/affaan-m/ECC.git
+cd ECC
+mkdir -p ~/.claude/rules/ecc
+cp -R rules/common ~/.claude/rules/ecc/
+cp -R rules/typescript ~/.claude/rules/ecc/</pre>
+  <div class="callout"><span class="label">Tip</span><code>typescript</code> ki jagah apna stack likho (python, golang, waghera). Shuruaat common aur ek language se karo.</div>
+
+  <h2 style="margin-top:9mm"><span class="n">04</span>Ab use karo</h2>
+  <p class="goal">Claude Code ke andar:</p>
+  <div class="grid2">
+    <div><pre>/ecc:plan "Add login with Google"</pre><p style="font-size:9pt">Planner agent code likhne se pehle feature ko chhote steps mein tod deta hai.</p></div>
+    <div><pre>/ecc:configure-ecc</pre><p style="font-size:9pt">Baad mein scope ya hook profile badalne ke liye.</p></div>
+  </div>
+  <div class="callout"><span class="label">Aur try karo</span><b>tdd-workflow</b> skill (pehle tests) aur security review agents. Saare agents aur skills ki poori list README mein hai.</div>
+  <div class="foot"><span>jayantechh · ECC setup guide</span><span>4</span></div>
+</section>
+
+<section class="page">
+  <h2><span class="n">05</span>Koi dikkat? Repair ya remove</h2>
+  <p class="goal"><b>Goal:</b> ye commands usi folder se chalao jahan se install kiya tha.</p>
+  <pre>npx ecc-universal@2.2.3 doctor
+npx ecc-universal@2.2.3 repair
+npx ecc-universal@2.2.3 uninstall --dry-run
+npx ecc-universal@2.2.3 uninstall</pre>
+  <table><tr><th>Command</th><th>Kya karta hai</th></tr>
+    <tr><td>doctor</td><td>Setup check karke problem batata hai</td></tr>
+    <tr><td>repair</td><td>Toota hua setup theek karta hai</td></tr>
+    <tr><td>uninstall --dry-run</td><td>Dikhata hai kya hatega, kuch delete nahi karta</td></tr>
+    <tr><td>uninstall</td><td>ECC ko poori tarah hata deta hai</td></tr>
+  </table>
+
+  <h2 style="margin-top:9mm"><span class="n">!</span>Safe raho</h2>
+  <div class="callout red"><span class="label">Sirf official source</span>Install sirf <b>github.com/affaan-m/ECC</b>, npm package <b>ecc-universal</b>, ya <b>ecc.tools</b> se karo. Author ke mutabik re-uploads aur mirrors mein malware ho sakta hai.</div>
+
+  <div class="page-end" style="margin-top:12mm;background:var(--night);border-radius:6px;padding:9mm;color:var(--cream)">
+    <div class="kicker">Follow for more</div>
+    <div style="font:400 34pt/1.05 Anton;margin-top:3mm">@JAYANTECHH<span style="color:var(--gold)">.</span></div>
+    <p style="margin-top:3mm;color:#e9e4da">Aise hi kamaal ke GitHub repos aur AI tools ke liye follow karo. Har din kuch naya laata hoon.</p>
+  </div>
+  <div class="foot"><span>jayantechh · ECC setup guide</span><span>5</span></div>
+</section>
+</body></html>

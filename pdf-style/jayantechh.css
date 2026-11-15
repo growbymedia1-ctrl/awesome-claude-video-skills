@@ -1,0 +1,75 @@
+/* jayantechh PDF house style — taken from the "JITT'AA" lyric-video guide.
+   Use for every future PDF: link this file, render with Chromium print-to-PDF (A4). */
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:400;src:url(fonts/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:400;font-style:italic;src:url(fonts/inter-latin-400-italic.woff2)}
+@font-face{font-family:Inter;font-weight:500;src:url(fonts/inter-latin-500-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:700;src:url(fonts/inter-latin-700-normal.woff2)}
+@font-face{font-family:Inter;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2)}
+@font-face{font-family:"Space Mono";font-weight:400;src:url(fonts/space-mono-latin-400-normal.woff2)}
+@font-face{font-family:"Space Mono";font-weight:700;src:url(fonts/space-mono-latin-700-normal.woff2)}
+
+:root{
+  --night:#121014;      /* cover background */
+  --night-2:#1d181f;    /* cover cards */
+  --gold:#E8A928;       /* cover kicker, byline, accent dot */
+  --cream:#F3E6C8;      /* cover headline */
+  --red:#D4361F;        /* section numbers, rule bars, labels, callout bars */
+  --paper:#FFFFFF;      /* content page */
+  --card:#FAF7EF;       /* cards / callouts */
+  --line:#EDE7D8;       /* card border */
+  --ink:#151311;        /* body text + code blocks */
+  --muted:#75726F;      /* captions, footer, table headers */
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:Inter,"DejaVu Sans",sans-serif;color:var(--ink);font-size:10.5pt;line-height:1.55;background:var(--paper)}
+.page{width:210mm;height:297mm;padding:20mm 18mm 18mm;position:relative;overflow:hidden;page-break-after:always;background:var(--paper)}
+.page:last-child{page-break-after:auto}
+.foot{position:absolute;left:18mm;right:18mm;bottom:9mm;display:flex;justify-content:space-between;font:400 7pt "Space Mono",monospace;color:var(--muted)}
+.mono,.label,code,pre{font-family:"Space Mono",monospace}
+
+/* cover */
+.cover{background:var(--night);color:#eee}
+.cover .foot{color:#8a8590}
+.kicker{font:700 8pt "Space Mono";letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.cover h1{font:800 27pt/1.12 Inter;letter-spacing:-.035em;color:var(--cream);margin-top:5mm}
+.big{font:400 92pt/1 Anton;color:var(--cream);margin-top:6mm;letter-spacing:.01em}
+.big .dot{color:var(--gold)}
+.cover .lede{max-width:125mm;font-size:10.5pt;color:#e9e4da;margin-top:7mm}
+.by{font:700 8pt "Space Mono";color:var(--gold);margin-top:6mm}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:10mm}
+.tile{background:var(--night-2);border:1px solid #2b2430;border-radius:5px;padding:6mm 4mm;min-height:40mm;display:flex;flex-direction:column;justify-content:flex-end}
+.tile b{font:400 34pt/1 Anton;color:var(--gold)}
+.tile span{font:700 7pt "Space Mono";letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin-top:2mm}
+.tile.light{background:var(--cream);border-color:var(--cream)}
+.tile.light b{color:var(--red)}.tile.light span{color:var(--ink)}
+
+/* content */
+h2{font:800 19pt/1.15 Inter;letter-spacing:-.035em}
+h2 .n{color:var(--red);margin-right:2mm}
+h2.rule:after{content:"";display:block;width:11mm;height:2.2px;background:var(--red);margin:3mm 0 4mm}
+.meta{float:right;font:400 7pt "Space Mono";color:var(--muted);margin-top:2mm}
+h3{font:700 11pt Inter;letter-spacing:-.01em;margin:6mm 0 2.5mm}
+p{margin-bottom:2.5mm}
+.goal b{font-weight:700}
+.label{font:700 7pt "Space Mono";letter-spacing:.12em;color:var(--red);text-transform:uppercase}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:3mm}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:4mm}
+.card h4{font:700 10pt Inter;margin:1.5mm 0 1mm}
+.card p{font-size:8.5pt;line-height:1.5;margin:0}
+.card .out{font:400 7pt "Space Mono";color:var(--muted);margin-top:2mm}
+.callout{background:var(--card);border-left:3px solid var(--red);border-radius:0 4px 4px 0;padding:3.5mm 4.5mm;margin:3mm 0}
+.callout .label{color:var(--muted);display:block;margin-bottom:1mm}
+.callout.red .label{color:var(--red)}
+pre{background:var(--ink);color:#f1ede4;font-size:8pt;line-height:1.6;border-radius:4px;padding:4mm 4.5mm;margin:2mm 0 3mm;white-space:pre-wrap}
+code{font-size:8.5pt;font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:9pt;margin-top:1mm}
+th{font:400 7pt "Space Mono";letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:2mm 2mm 2mm 0;border-bottom:1px solid #d9d5cc}
+td{padding:2.4mm 2mm 2.4mm 0;border-bottom:1px solid #e6e2da;vertical-align:top}
+td:first-child{font-weight:700;width:38%}
+ul{padding-left:5mm}li{margin-bottom:1.2mm}
+a{color:var(--red);text-decoration:none;font-weight:600}
